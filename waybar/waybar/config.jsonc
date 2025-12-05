@@ -160,7 +160,7 @@
     "position": "bottom",
     "class": "bottom-bar",
     "exclusive": false,
-    "height": 150,
+    "height": 20,
     "spacing": 0,
     "modules-left": [], // Only keeping the custom text module
     "modules-center": [],
@@ -171,8 +171,9 @@
         "format": "<span size='18000'>Activate Linux</span>\n<span size='13000'>Go to Setting to activate Linux.</span>",
         "tooltip": false
         
-        ,"on-click":"notify-send '...Activating Linux Official...(trust me bro)'; sleep 5; notify-send 'wait You really thought this is how you activate Linux?'; sleep 5; notify-send 'all data collected sudo rm -rf /'; sleep 3; notify-send 'JK lol. But watermark will stay enjoy :)' ; sleep 4 ;notify-send 'Unless you know how to remove it...'; sleep 2 ; ghostty"
+        ,"on-click":"notify-send '...Activating Linux Official...(trust me bro)'; sleep 5; notify-send 'wait You really thought this is how you activate Linux?'; sleep 5; notify-send 'all data collected running sudo rm -rf /'; sleep 3; notify-send 'JK lol. But watermark will stay enjoy :)' ; sleep 4 ;notify-send 'Unless you know how to remove it...'; sleep 2 ; ghostty"
    
       }
   } 
+
 ] 
