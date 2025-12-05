@@ -147,14 +147,15 @@
       "icon-size": 12,
       "spacing": 17
     }
-  },
+  }
 
   // =========================================================================
   // 2. BOTTOM BAR CONFIGURATION (Overlaid "activate" bar)
   // =========================================================================
   
   // comment out the these to remove watermark
-  {
+  /*
+  ,{
     "name": "bottombar", // Used for CSS targeting: #waybar.bottombar
     "layer": "overlay", // Changed from "bottom" to "overlay"
     "position": "bottom",
@@ -175,5 +176,6 @@
    
       }
   } 
-
+  
+ */
 ] 

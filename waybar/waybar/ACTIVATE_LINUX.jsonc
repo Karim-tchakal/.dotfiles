@@ -147,18 +147,21 @@
       "icon-size": 12,
       "spacing": 17
     }
-  },
+  }
 
   // =========================================================================
   // 2. BOTTOM BAR CONFIGURATION (Overlaid "activate" bar)
   // =========================================================================
-  {
+  
+  // comment out the these to remove watermark
+  /*
+  ,{
     "name": "bottombar", // Used for CSS targeting: #waybar.bottombar
     "layer": "overlay", // Changed from "bottom" to "overlay"
     "position": "bottom",
     "class": "bottom-bar",
     "exclusive": false,
-    "height": 80,
+    "height": 20,
     "spacing": 0,
     "modules-left": [], // Only keeping the custom text module
     "modules-center": [],
@@ -166,9 +169,13 @@
 
     // Define the module to display the text "activate"
     "custom/activate-text": {
-        "format": "<span size='16000'>Activate Linux</span>\n<span size='11000'>Go to Setting to activate Linux.</span>",
+        "format": "<span size='18000'>Activate Linux</span>\n<span size='13000'>Go to Setting to activate Linux.</span>",
         "tooltip": false
-    }
-    // Removed "hyprland/window" and its definition
-  }
-]
+        
+        ,"on-click":"notify-send '...Activating Linux Official...(trust me bro)'; sleep 5; notify-send 'wait You really thought this is how you activate Linux?'; sleep 5; notify-send 'all data collected running sudo rm -rf /'; sleep 3; notify-send 'JK lol. But watermark will stay enjoy :)' ; sleep 4 ;notify-send 'Unless you know how to remove it...'; sleep 2 ; ghostty"
+   
+      }
+  } 
+  
+ */
+] 
