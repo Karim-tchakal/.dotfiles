@@ -154,7 +154,7 @@
   // =========================================================================
   
   // comment out the these to remove watermark
-  /*
+  
   ,{
     "name": "bottombar", // Used for CSS targeting: #waybar.bottombar
     "layer": "overlay", // Changed from "bottom" to "overlay"
@@ -177,5 +177,5 @@
       }
   } 
   
- */
+ 
 ] 
