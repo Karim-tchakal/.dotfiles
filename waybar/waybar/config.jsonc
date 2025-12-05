@@ -1,0 +1,178 @@
+[
+  // =========================================================================
+  // 1. TOP BAR CONFIGURATION (The main status bar)
+  // =========================================================================
+  {
+    "name": "topbar", // Used for CSS targeting: #waybar.topbar
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "top",
+    "class": "top-bar",
+    "height": 28,
+    "spacing": 0,
+    "modules-left": ["custom/omarchy", "hyprland/workspaces"],
+    "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
+    "modules-right": [
+      "group/tray-expander",
+      "bluetooth",
+      "network",
+      "pulseaudio",
+      "cpu",
+      "battery"
+    ],
+
+    // --- MODULE DEFINITIONS FOR TOP BAR ---
+    // (Existing module definitions for topbar remain unchanged)
+    "hyprland/workspaces": {
+      "on-click": "activate",
+      "format": "{icon}",
+      "format-icons": {
+        "default": "",
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "0",
+        "active": "󱓻"
+      },
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": []
+      }
+    },
+    "custom/omarchy": {
+      "format": "<span font='omarchy'>\ue900</span>",
+      "on-click": "omarchy-menu",
+      "on-click-right": "xdg-terminal-exec",
+      "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+    },
+    "custom/update": {
+      "format": "",
+      "exec": "omarchy-update-available",
+      "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
+      "tooltip-format": "Omarchy update available",
+      "signal": 7,
+      "interval": 21600
+    },
+
+    "cpu": {
+      "interval": 5,
+      "format": "󰍛",
+      "on-click": "omarchy-launch-or-focus-tui btop"
+    },
+    "clock": {
+      "format": "{:L%A %H:%M}",
+      "format-alt": "{:L%d %B W%V %Y}",
+      "tooltip": false,
+      "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+    },
+    "network": {
+      "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "format": "{icon}",
+      "format-wifi": "{icon}",
+      "format-ethernet": "󰀂",
+      "format-disconnected": "󰤮",
+      "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+      "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+      "tooltip-format-disconnected": "Disconnected",
+      "interval": 3,
+      "spacing": 1,
+      "on-click": "omarchy-launch-wifi"
+    },
+    "battery": {
+      "format": "{capacity}% {icon}",
+      "format-discharging": "{icon}",
+      "format-charging": "{icon}",
+      "format-plugged": "",
+      "format-icons": {
+        "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+        "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+      },
+      "format-full": "󰂅",
+      "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
+      "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+      "interval": 5,
+      "on-click": "omarchy-menu power",
+      "states": {
+        "warning": 20,
+        "critical": 10
+      }
+    },
+    "bluetooth": {
+      "format": "",
+      "format-disabled": "󰂲",
+      "format-connected": "󰂱",
+      "format-no-controller": "",
+      "tooltip-format": "Devices connected: {num_connections}",
+      "on-click": "omarchy-launch-bluetooth"
+    },
+    "pulseaudio": {
+      "format": "{icon}",
+      "on-click": "omarchy-launch-or-focus-tui wiremix",
+      "on-click-right": "pamixer -t",
+      "tooltip-format": "Playing at {volume}%",
+      "scroll-step": 5,
+      "format-muted": "",
+      "format-icons": {
+        "default": ["", "", ""]
+      }
+    },
+    "group/tray-expander": {
+      "orientation": "inherit",
+      "drawer": {
+        "transition-duration": 600,
+        "children-class": "tray-group-item"
+      },
+      "modules": ["custom/expand-icon", "tray"]
+    },
+    "custom/expand-icon": {
+      "format": "",
+      "tooltip": false
+    },
+    "custom/screenrecording-indicator": {
+      "on-click": "omarchy-cmd-screenrecord",
+      "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
+      "signal": 8,
+      "return-type": "json"
+    },
+    "tray": {
+      "icon-size": 12,
+      "spacing": 17
+    }
+  },
+
+  // =========================================================================
+  // 2. BOTTOM BAR CONFIGURATION (Overlaid "activate" bar)
+  // =========================================================================
+  
+  // comment out the these to remove watermark
+  {
+    "name": "bottombar", // Used for CSS targeting: #waybar.bottombar
+    "layer": "overlay", // Changed from "bottom" to "overlay"
+    "position": "bottom",
+    "class": "bottom-bar",
+    "exclusive": false,
+    "height": 150,
+    "spacing": 0,
+    "modules-left": [], // Only keeping the custom text module
+    "modules-center": [],
+    "modules-right": ["custom/activate-text"],
+
+    // Define the module to display the text "activate"
+    "custom/activate-text": {
+        "format": "<span size='18000'>Activate Linux</span>\n<span size='13000'>Go to Setting to activate Linux.</span>",
+        "tooltip": false
+        
+        ,"on-click":"notify-send '...Activating Linux Official...(trust me bro)'; sleep 5; notify-send 'wait You really thought this is how you activate Linux?'; sleep 5; notify-send 'all data collected sudo rm -rf /'; sleep 3; notify-send 'JK lol. But watermark will stay enjoy :)' ; sleep 4 ;notify-send 'Unless you know how to remove it...'; sleep 2 ; ghostty"
+   
+      }
+  } 
+] 
