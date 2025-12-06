@@ -7,8 +7,9 @@
     "reload_style_on_change": true,
     "layer": "top",
     "position": "top",
-    "class": "top-bar",
-    "height": 28,
+    "class": "topbar",
+    "margin": "5 10 0 10",
+    "height": 32,
     "spacing": 0,
     "modules-left": ["custom/omarchy", "hyprland/workspaces"],
     "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
@@ -18,7 +19,9 @@
       "network",
       "pulseaudio",
       "cpu",
-      "battery"
+      "battery",
+      "custom/DayNight",
+      "custom/shutdown"
     ],
 
     // --- MODULE DEFINITIONS FOR TOP BAR ---
@@ -55,7 +58,7 @@
       "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
     },
     "custom/update": {
-      "format": "",
+      "format": " ",
       "exec": "omarchy-update-available",
       "on-click": "omarchy-launch-floating-terminal-with-presentation omarchy-update",
       "tooltip-format": "Omarchy update available",
@@ -65,7 +68,7 @@
 
     "cpu": {
       "interval": 5,
-      "format": "󰍛",
+      "format": " {usage}%",
       "on-click": "omarchy-launch-or-focus-tui btop"
     },
     "clock": {
@@ -91,12 +94,12 @@
       "format": "{capacity}% {icon}",
       "format-discharging": "{icon}",
       "format-charging": "{icon}",
-      "format-plugged": "",
+      "format-plugged": " ",
       "format-icons": {
-        "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-        "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "charging": ["󰢜 ", "󰂆 ", "󰂇 ", "󰂈 ", "󰢝 " , "󰂉 ",  "󰢞 ", "󰂊 ", "󰂋 ", "󰂅 "],
+        "default": ["󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "]
       },
-      "format-full": "󰂅",
+      "format-full": "󰂅 ",
       "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
       "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
       "interval": 5,
@@ -114,15 +117,36 @@
       "tooltip-format": "Devices connected: {num_connections}",
       "on-click": "omarchy-launch-bluetooth"
     },
+
+
+
+    "custom/shutdown": {
+  "format": " ",
+  "tooltip-format": "Shutdown the system",
+  "on-click": "omarchy-menu system"
+  
+},
+"custom/DayNight": {
+    "exec": "bash ~/.dotfiles/scripts/scripts/daynight_icon.sh",
+    "interval": 30000000,
+    "tooltip-format": "Click to toggle theme",
+    "on-click": "bash ~/.dotfiles/scripts/scripts/toggle_theme.sh "
+},
+
+
+
+
+
+
     "pulseaudio": {
       "format": "{icon}",
       "on-click": "omarchy-launch-or-focus-tui wiremix",
       "on-click-right": "pamixer -t",
       "tooltip-format": "Playing at {volume}%",
       "scroll-step": 5,
-      "format-muted": "",
+      "format-muted": " ",
       "format-icons": {
-        "default": ["", "", ""]
+        "default": [" ", " ", " "]
       }
     },
     "group/tray-expander": {
