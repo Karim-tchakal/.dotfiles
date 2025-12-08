@@ -1,5 +1,4 @@
 /* Import Waybar base theme and current color variables */
-
 @import "/home/karim/.dotfiles/hollowtheme/hollowtheme/current_colors.css";
 
 /* ------------------------------------------------------------------------- */
@@ -12,6 +11,7 @@
     min-height: 0;
     font-family: 'JetBrainsMono Nerd Font';
     font-size: 20px;
+    
 }
 
 /* Custom notification styling */
@@ -27,7 +27,7 @@
 #waybar.topbar {
     background-color: @bg_color;  /* Use bg_color variable directly */
     background-image: none;
-    border: 2px solid rgba(255, 255, 255, 0.1); /* Semi-transparent border */
+    border: 2px solid @border_color; /* Semi-transparent border */
     border-radius: 10px;
 }
 
@@ -69,31 +69,69 @@
 
 #cpu,
 #battery,
-#pulseaudio,
 #custom-omarchy,
 #custom-screenrecording-indicator,
 #custom-update,
-#custom-shutdown,
-#custom-DayNight
-
-
-
+#custom-DayNight,
+#network
+{
+    font-size: 22px;
+    min-width: 12px;
+    margin: 0 9px;
+}
+#bluetooth
 {
     min-width: 12px;
-    margin: 0 7.5px;
+    font-size: 26px;
+    margin-right: 4px;
+}
+#custom-shutdown
+{
+    min-width: 12px;
+    margin: 0 20px 0px 26px;
 }
 
+
+#network {
+    margin-right: 20px;
+}
+
+
+
+#pulseaudio {
+    font-size: 22px;
+}
+#pulseaudio-slider {
+    min-width: 0px;
+    margin: 0 0px;
+}
+
+
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 10px;
+    background: @slider_bg;
+}
+#pulseaudio-slider highlight {
+    min-width: 1px;
+    border-radius: 10px;
+    background: @fg_color;
+}
 #tray {
     margin-right: 16px;
 }
 
-#bluetooth {
-    margin-right: 17px;
-}
 
-#network {
-    margin-right: 13px;
-}
 
 #custom-expand-icon {
     margin-right: 18px;

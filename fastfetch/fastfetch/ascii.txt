@@ -1,0 +1,1 @@
+/home/karim/.dotfiles/hollowtheme/hollowtheme/darktheme/ascii_dark.txt
