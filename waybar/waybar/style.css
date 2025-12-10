@@ -84,6 +84,7 @@
     min-width: 12px;
     font-size: 26px;
     margin-right: 4px;
+    
 }
 #custom-shutdown
 {
@@ -92,7 +93,8 @@
 }
 
 
-#network {
+#network,
+#custom-wifi {
     margin-right: 20px;
 }
 
@@ -106,7 +108,9 @@
     margin: 0 0px;
 }
 
-
+#custom-expand-icon {
+    margin-right: 18px;
+}
 
 #pulseaudio-slider slider {
     min-height: 0px;
@@ -133,9 +137,7 @@
 
 
 
-#custom-expand-icon {
-    margin-right: 18px;
-}
+
 
 tooltip {
     background-color: @bg_color; /* dark background */
@@ -181,4 +183,44 @@ tooltip {
     margin-bottom: 50px;
     margin-right: 20px;
     text-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wifi-veryweak {
+    color: #FF7777;   /* slightly darker red */
+}
+
+/* Weak Wi-Fi */
+.wifi-weak {
+    color: #FFCC99;   /* light orange */
+}
+
+/* Medium Wi-Fi */
+.wifi-medium {
+    color: #C3B7B8;   /* theme foreground color */
+}
+
+/* Good Wi-Fi */
+.wifi-good {
+    color: #E6FFE6;   /* light greenish blend */
+}
+
+/* Full Wi-Fi */
+.wifi-full {
+    color: #00FF00;   /* bright green */
 }

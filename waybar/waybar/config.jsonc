@@ -16,6 +16,7 @@
     "modules-right": [
       "bluetooth",
       "network",
+   //"custom/wifi",
       "group/sound-expander",
       "cpu",
       "battery",
@@ -54,8 +55,8 @@
     "format": "{}",
     "max-length": 50,
     "rewrite": {
-        "(.*) - Google Chrome": "  > $1",
-        "(.*) - Visual Studio Code": "  > $1",
+        "(.*) - Google Chrome": "   $1",
+        "(.*) - Visual Studio Code": "   $1",
         "karim@archlinux:(.*)": "   $1",
         "~":"   ~",
         "🔔(.*)": " 󰂚 $1",
@@ -89,11 +90,20 @@
       "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
     },
     "network": {
-      "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+      "format-icons": [
+ "<span color=\"#FF7777\">󰤯</span>",
+ "<span color=\"#FFCC99\">󰤟</span>",
+ "<span color=\"#FFFF99\">󰤢</span>",
+ "<span color=\"#E6FFE6\">󰤥</span>",
+ "<span color=\"#abffab\">󰤨</span>"
+],
+
+    // 2. Specify the script to run
+    "exec": "bash /home/karim/.dotfiles/scripts/scripts/generate_wifi_icons.sh",
       "format": "{icon}",
       "format-wifi": "{icon}",
       "format-ethernet": "󰀂",
-      "format-disconnected": "󰤮",
+      "format-disconnected": "<span color=\"#FF7777\">󰤮</span>",
       "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
       "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
       "tooltip-format-disconnected": "Disconnected",
@@ -130,12 +140,20 @@
       "tooltip-format": "Devices connected: {num_connections}",
       "on-click": "omarchy-launch-bluetooth"
     },
-
-
-
+/*
+"custom/wifi": {
+  "exec": "bash /home/karim/.dotfiles/scripts/scripts/generate_wifi_icons.sh",
+  "interval": 3,
+  "return-type": "json",
+  "format": "{text}",
+  "tooltip": true,
+  "on-click": "omarchy-launch-wifi"
+}
+,
+*/
     "custom/shutdown": {
   "format": "",
-  "tooltip-format": "Shutdown the system",
+  "tooltip-format": "Open Log System Menu",
   "on-click": "omarchy-menu system"
   
 },
@@ -169,7 +187,7 @@
     "group/sound-expander": {
       "orientation": "inherit",
       "drawer": {
-        "transition-duration": 500,
+        "transition-duration": 0,
         "children-class": "tray-group-item"
       }
        ,"modules": ["pulseaudio" ,"pulseaudio/slider"]

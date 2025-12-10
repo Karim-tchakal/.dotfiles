@@ -4,3 +4,10 @@
 @define-color accent_color rgba(161, 189, 206, 1);
 @define-color border_color rgba(255, 255, 255, 0.6);
 @define-color slider_bg rgba(0,0,0, 1);
+
+/* Assuming your Wi-Fi colors are defined like this too: */
+@define-color wifi-veryweak #FF7777;
+@define-color wifi-weak #FFCC99;
+@define-color wifi-medium #FFFF99;
+@define-color wifi-good #E6FFE6;
+@define-color full #abffab;
