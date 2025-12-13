@@ -14,6 +14,7 @@
     "modules-left": ["custom/omarchy", "hyprland/workspaces","hyprland/window"],
     "modules-center": ["clock", "custom/update", "custom/screenrecording-indicator"],
     "modules-right": [
+      "image#silksong",
       "bluetooth",
       "network",
    //"custom/wifi",
@@ -23,6 +24,20 @@
       "custom/DayNight",
       "custom/shutdown"
     ],
+    
+  "image#silksong": {
+    "path": "/home/karim/.dotfiles/hollowtheme/hollowtheme/darktheme/f0e95622d20a747e93f5403e5193b155.png",
+    "size": 22,
+    "on-click": "steam steam://rungameid/1030300"
+},
+
+
+
+
+
+
+
+
 
     // --- MODULE DEFINITIONS FOR TOP BAR ---
     // (Existing module definitions for topbar remain unchanged)
@@ -60,7 +75,8 @@
         "karim@archlinux:(.*)": "   $1",
         "~":"   ~",
         "🔔(.*)": " 󰂚 $1",
-        "tmux(.*)": "   $1"
+        "tmux(.*)": "   $1",
+        "YouTube(.*)": "   $1"
     }
 },
     "custom/omarchy": {
