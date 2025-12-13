@@ -28,7 +28,9 @@
   "image#silksong": {
     "path": "/home/karim/.dotfiles/hollowtheme/hollowtheme/darktheme/f0e95622d20a747e93f5403e5193b155.png",
     "size": 22,
-    "on-click": "steam steam://rungameid/1030300"
+    "tooltip": true,
+    "on-click": "steam steam://rungameid/1030300",
+    "tooltip-format": "Shaw"
 },
 
 
@@ -83,7 +85,7 @@
       "format": " ",
       "on-click": "omarchy-menu",
       "on-click-right": "xdg-terminal-exec;xdg-open https://github.com/Karim-tchakal/.dotfiles",
-      "tooltip-format": "Omarchy Menu\n\nSuper + Alt + Space"
+      "tooltip-format": "Control Menu\nSuper + Alt + Space\n\nRight-Click to Open Repo "
     },
     "custom/update": {
       "format": " ",
