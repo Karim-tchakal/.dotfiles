@@ -1,5 +1,7 @@
 @define-color fg_color rgba(60, 40, 20, 1);       
-@define-color bg_color rgba(236,224,209 , 0.9);
+@define-color bg_color rgba(236,224,209 , 0.89);
 @define-color accent_color rgba(50, 115, 200, 1);
 @define-color border_color rgba(60, 40, 20, 0.8);
 @define-color slider_bg rgba(200, 185, 165, 1);
+@define-color right_bg rgba(60, 40, 20, 0.15);
+@define-color right_fg rgba(60, 40, 20, 1);

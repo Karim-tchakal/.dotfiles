@@ -33,9 +33,24 @@
     "tooltip-format": "Shaw"
 },
 
-
-
-
+"wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 14,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+       "Alacritty"
+    ],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "rewrite": {
+        "Firefox Web Browser": "Firefox",
+        "Foot Server": "Terminal"
+    }
+},
 
 
 
@@ -45,7 +60,7 @@
     // (Existing module definitions for topbar remain unchanged)
     "hyprland/workspaces": {
       "on-click": "activate",
-      "format": "{icon}",
+      "format": " {icon} ",
       "format-icons": {
         "default": "",
         "1": "1",
@@ -69,16 +84,18 @@
       }
     },
     "hyprland/window": {
-    "format": "{}",
+    "format": " {}",
+    "on-click": "hyprctl dispatch resizeactive exact 65% 100%",
+    "on-click-right": "hyprctl dispatch resizeactive exact 35% 100%",
     "max-length": 50,
     "rewrite": {
         "(.*) - Google Chrome": "   $1",
         "(.*) - Visual Studio Code": "   $1",
-        "karim@archlinux:(.*)": "   $1",
-        "~":"   ~",
-        "🔔(.*)": " 󰂚 $1",
-        "tmux(.*)": "   $1",
-        "YouTube(.*)": "   $1"
+        " karim@archlinux:(.*)": "   $1",
+        " ~":"   ~",
+        " 🔔(.*)": " 󰂚 $1",
+        " tmux(.*)": "   $1",
+        " YouTube(.*)": "   $1"
     }
 },
     "custom/omarchy": {
@@ -128,6 +145,7 @@
       "interval": 3,
       "spacing": 1,
       "on-click": "omarchy-launch-wifi"
+      
     },
     "battery": {
       

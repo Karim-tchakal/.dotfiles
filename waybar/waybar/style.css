@@ -5,7 +5,7 @@
 /* 1. GLOBAL BASE STYLES */
 * {
     font-weight: bold;
-    color: @fg_color;          /* Dynamic foreground color */
+             /* Dynamic foreground color */
     border: none;
     border-radius: 0;
     min-height: 0;
@@ -25,10 +25,12 @@
 /* ------------------------------------------------------------------------- */
 /* 2. MAIN BAR COLORING (TOP BAR) */
 #waybar.topbar {
+    color: @fg_color;
     background-color: @bg_color;  /* Use bg_color variable directly */
     background-image: none;
     border: 2px solid @border_color; /* Semi-transparent border */
     border-radius: 10px;
+    
 }
 
 /* ------------------------------------------------------------------------- */
@@ -53,23 +55,63 @@
 }
 
 .modules-right {
-    margin-right: 8px;
+    margin-right: 6px;
+    background-color: @right_bg;
+    margin: 10px;
+    border-radius: 100px;
+    color: @right_fg;
+    border: 0.4px solid @border_color;
+}
+.modules-center {
+    margin-right: 6px;
+    margin-left: 6px;
+    background-color: @right_bg;
+    margin: 10px;
+    border-radius: 100px;
+    color: @right_fg;
+    border: 0.4px solid @border_color;
+}
+
+
+#window {
+    background-color: @right_bg;
+    margin: 10px;
+    padding-right: 10px;
+    border-radius: 100px;
+    color: @right_fg;
+    border: 0.4px solid @border_color;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+}
+
+#workspaces {
+    background-color: @right_bg;
+    margin: 10px;
+    border: 0.4px solid @border_color;
+    border-radius: 100px;
+    color: @right_fg;
+
 }
 
 #workspaces button {
     all: initial;
-    padding: 0 6px;
-    margin: 0 1.5px;
-    min-width: 9px;
+    color: @right_fg;
+    padding: 0 0px;
+    margin: 0 0px;
+    min-width: 0px;
 }
+
+
 
 #workspaces button.empty {
     opacity: 0.5;
+    
 }
 
 #cpu,
 #battery,
-#custom-omarchy,
 #custom-screenrecording-indicator,
 #custom-update,
 #custom-DayNight,
@@ -101,10 +143,18 @@
 
 #image{
     margin-right: 10px;
+    margin-left: 10px;
     opacity: 0.8;
     
 }
-
+#custom-omarchy {
+    background-color: @right_bg;
+    margin: 10px;
+    padding:0 10px;
+    border-radius: 100px;
+    color: @right_fg;
+    border: 0.4px solid @border_color;
+}
 #pulseaudio {
     font-size: 22px;
 }
@@ -146,14 +196,17 @@
 
 tooltip {
     background-color: @bg_color; /* dark background */
-    color: rgba(195, 183, 184, 1);           /* text color */
-    font-family: 'JetBrainsMono Nerd Font';
-    font-size: 14px;
+               /* text color */
+    
     padding: 6px 10px;
     border-radius: 6px;
     border: 1px solid rgba(161, 189, 206, 0.3);
 }
-
+tooltip label{
+    color: @fg_color;
+    font-family: 'JetBrainsMono Nerd Font';
+    font-size: 20px;
+}
 
 #custom-update {
     font-size: 10px;
@@ -161,6 +214,7 @@ tooltip {
 
 #clock {
     margin-left: 8.75px;
+    margin-right: 8.75px;
 }
 
 .hidden {
