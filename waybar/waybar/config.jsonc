@@ -26,31 +26,14 @@
     ],
     
   "image#silksong": {
-    "path": "/home/karim/.dotfiles/hollowtheme/hollowtheme/darktheme/f0e95622d20a747e93f5403e5193b155.png",
+    "path": "/home/karim/.dotfiles/hollowtheme/hollowtheme/darktheme/shaw.png",
     "size": 22,
     "tooltip": true,
     "on-click": "steam steam://rungameid/1030300",
     "tooltip-format": "Shaw"
 },
 
-"wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 14,
-    "icon-theme": "Numix-Circle",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-       "Alacritty"
-    ],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    },
-    "rewrite": {
-        "Firefox Web Browser": "Firefox",
-        "Foot Server": "Terminal"
-    }
-},
+
 
 
 
@@ -144,7 +127,8 @@
       "tooltip-format-disconnected": "Disconnected",
       "interval": 3,
       "spacing": 1,
-      "on-click": "omarchy-launch-wifi"
+      "on-click": "omarchy-launch-wifi",
+      "on-click-right": "nm-connection-editor"
       
     },
     "battery": {
